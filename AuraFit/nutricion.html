@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Nutrición Deportiva - Aura Fit</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .categoria-articulo {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: #0284c7;
+            margin: 4px 0 2px 0;
+            letter-spacing: 0.5px;
+        }
+        .meta-articulo {
+            font-size: 12px;
+            color: #64748b;
+            margin-bottom: 8px;
+        }
+        .beneficio-tag {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #1e40af;
+            font-size: 11px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 5px;
+            border: 1px solid #bfdbfe;
+        }
+        .btn-leer {
+            margin-top: 12px;
+            background-color: #1e293b;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-leer:hover {
+            background-color: #0284c7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+
+        <div class="centro-contenido" style="width: 75%; float: left;">
+            <h2>Nutrición Deportiva y Suplementación</h2>
+            <p>Optimiza tu rendimiento y recuperación con los nutrientes adecuados. <b>Selecciona la guía que deseas explorar:</b></p>
+
+            <!-- Artículo 1 -->
+            <div class="imagen-box" style="margin-top: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 25px;">
+                <img src="nutricion1.jpeg" alt="Proteína Whey para Ganancia Muscular" style="width: 260px; height: 180px; object-fit: cover; border-radius: 6px;">
+                <p class="categoria-articulo">Suplementación Básica</p>
+                <h3 style="margin: 2px 0 5px 0; color: #1e293b; font-size: 19px;">Guía Completa de Proteína Whey</h3>
+                <p class="meta-articulo">Nivel: Principiante | <span class="beneficio-tag">Recuperación Muscular</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> Todo lo que necesitas saber sobre la proteína de suero de leche: cuándo tomarla, cuánta necesitas y cómo elegir la mejor opción para tus objetivos de tonificación o aumento de masa muscular.</p>
+                <a href="#" class="btn-leer" onclick="return false;">Leer Guía Completa &rarr;</a>
+            </div>
+
+            <!-- Artículo 2 -->
+            <div class="imagen-box" style="margin-top: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 25px;">
+                <img src="nutricion2.jpeg" alt="Creatina Monohidratada para Fuerza" style="width: 260px; height: 180px; object-fit: cover; border-radius: 6px;">
+                <p class="categoria-articulo">Rendimiento & Fuerza</p>
+                <h3 style="margin: 2px 0 5px 0; color: #1e293b; font-size: 19px;">Creatina: El Suplemento de Fuerza</h3>
+                <p class="meta-articulo">Nivel: Intermedio | <span class="beneficio-tag">Potencia y Energía</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> Desmitificamos la creatina. Entiende cómo este suplemento ayuda a tus músculos a producir energía durante ejercicios de alta intensidad, mejorando tu fuerza y volumen de entrenamiento de forma segura.</p>
+                <a href="#" class="btn-leer" onclick="return false;">Leer Guía Completa &rarr;</a>
+            </div>
+
+            <!-- Artículo 3 -->
+            <div class="imagen-box" style="margin-top: 25px; padding-bottom: 25px;">
+                <img src="nutricion3.jpeg" alt="Hidratación y Electrolitos" style="width: 260px; height: 180px; object-fit: cover; border-radius: 6px;">
+                <p class="categoria-articulo">Salud & Resistencia</p>
+                <h3 style="margin: 2px 0 5px 0; color: #1e293b; font-size: 19px;">Importancia de la Hidratación y Electrolitos</h3>
+                <p class="meta-articulo">Nivel: Todos los Niveles | <span class="beneficio-tag">Función Muscular</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> El agua no es suficiente si entrenas intenso. Aprende por qué reponer sodio, potasio y magnesio es vital para evitar calambres, mantener el rendimiento y acelerar la recuperación.</p>
+                <a href="#" class="btn-leer" onclick="return false;">Leer Guía Completa &rarr;</a>
+            </div>
+
+            <p style="margin-top: 25px;"><a href="guia.html" style="color: #0284c7; text-decoration: none; font-weight: bold;">&larr; Volver a Guía Fitness</a></p>
+        </div>
+
+        <div class="menu-lateral-der" style="width: 20%; float: right; padding-left: 15px; border-left: 1px solid #e2e8f0;">
+            <b>Secciones</b>
+            <ul style="list-style-type: none; padding: 0; margin-top: 10px;">
+                <li style="margin-bottom: 8px;"><a href="rutinas.html" style="text-decoration: none; color: #475569; font-size: 13px;">Rutinas en Casa</a></li>
+                <li style="margin-bottom: 8px;"><a href="nutricion.html" style="text-decoration: none; color: #0284c7; font-weight: bold; font-size: 13px;">Nutrición Deportiva</a></li>
+                <li style="margin-bottom: 8px;"><a href="recuperacion.html" style="text-decoration: none; color: #475569; font-size: 13px;">Tips de Recuperación</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Leggings - Aura Fit</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .precio-producto {
+            font-size: 17px;
+            font-weight: bold;
+            color: #0284c7;
+            margin: 4px 0 8px 0;
+        }
+        .opciones-producto {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #475569;
+        }
+        .contenedor-colores {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .circulo-color {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            margin-right: 6px;
+            border: 2px solid #cbd5e1;
+            vertical-align: middle;
+            cursor: pointer;
+            transition: transform 0.15s, border-color 0.15s;
+        }
+        .circulo-color:hover {
+            transform: scale(1.15);
+        }
+        .circulo-color.activo {
+            border: 2px solid #0284c7;
+            box-shadow: 0 0 0 2px #bae6fd;
+            transform: scale(1.15);
+        }
+        .color-negro { background-color: #1e293b; }
+        .color-azul { background-color: #1e3a8a; }
+        .color-vino { background-color: #581c87; }
+
+        .contenedor-tallas {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .cuadro-talla {
+            display: inline-block;
+            border: 1px solid #cbd5e1;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-right: 4px;
+            background-color: #f8fafc;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .cuadro-talla:hover {
+            border-color: #0284c7;
+        }
+        .cuadro-talla.activo {
+            background-color: #0284c7;
+            color: #ffffff;
+            border-color: #0284c7;
+        }
+        .estado-seleccion {
+            font-size: 12px;
+            color: #0f172a;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+        .btn-solicitar {
+            margin-top: 8px;
+            background-color: #1e293b;
+            color: #ffffff;
+            border: none;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-solicitar:hover {
+            background-color: #0284c7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+
+        <div class="centro-contenido" style="width: 75%; float: left;">
+            <h2>Colección: Leggings</h2>
+            <p>Prendas de compresión media y alta diseñadas para entrenar en gimnasio, correr o realizar movilidad diaria en Costa Rica. <b>Selecciona color y talla para solicitar tu prenda:</b></p>
+
+            <!-- Producto 1 -->
+            <div class="imagen-box" id="prod-1" style="margin-top: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px;">
+                <img src="legging1.jpeg" alt="Legging Cintura Alta Aura Fit" style="width: 260px; height: 180px; object-fit: cover;">
+                <h3 style="margin: 10px 0 2px 0; color: #1e293b; font-size: 18px;">Legging Cintura Alta</h3>
+                <p class="precio-producto">₡18.500 <span style="font-size: 11px; font-weight: normal; color: #64748b;">(I.V.A. incluido)</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> Ajuste firme en cintura con tela transpirable de secado rápido.</p>
+                
+                <div class="opciones-producto">
+                    <p style="margin: 5px 0;">
+                        <b>Color:</b> 
+                        <span class="contenedor-colores">
+                            <span class="circulo-color color-negro" title="Negro" onclick="seleccionarColor('prod-1', 'Negro', this)"></span>
+                            <span class="circulo-color color-azul" title="Azul Marino" onclick="seleccionarColor('prod-1', 'Azul Marino', this)"></span>
+                            <span class="circulo-color color-vino" title="Vino Tinto" onclick="seleccionarColor('prod-1', 'Vino Tinto', this)"></span>
+                        </span>
+                    </p>
+                    <p style="margin: 5px 0;">
+                        <b>Talla:</b> 
+                        <span class="contenedor-tallas">
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-1', 'S', this)">S</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-1', 'M', this)">M</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-1', 'L', this)">L</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-1', 'XL', this)">XL</span>
+                        </span>
+                    </p>
+                    <p class="estado-seleccion" id="estado-prod-1">Selección: Ninguna</p>
+                    <button type="button" class="btn-solicitar" onclick="enviarAFormulario('prod-1', 'Legging Cintura Alta', '₡18.500')">Solicitar en Formulario &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="imagen-box" id="prod-2" style="margin-top: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px;">
+                <img src="legging2.jpeg" alt="Legging Sin Costura Lateral Aura Fit" style="width: 260px; height: 180px; object-fit: cover;">
+                <h3 style="margin: 10px 0 2px 0; color: #1e293b; font-size: 18px;">Legging Sin Costura Lateral</h3>
+                <p class="precio-producto">₡21.900 <span style="font-size: 11px; font-weight: normal; color: #64748b;">(I.V.A. incluido)</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> Mayor libertad de movimiento para sentadillas y entrenamientos de pierna.</p>
+                
+                <div class="opciones-producto">
+                    <p style="margin: 5px 0;">
+                        <b>Color:</b> 
+                        <span class="contenedor-colores">
+                            <span class="circulo-color color-negro" title="Negro" onclick="seleccionarColor('prod-2', 'Negro', this)"></span>
+                            <span class="circulo-color color-azul" title="Azul Marino" onclick="seleccionarColor('prod-2', 'Azul Marino', this)"></span>
+                            <span class="circulo-color color-vino" title="Vino Tinto" onclick="seleccionarColor('prod-2', 'Vino Tinto', this)"></span>
+                        </span>
+                    </p>
+                    <p style="margin: 5px 0;">
+                        <b>Talla:</b> 
+                        <span class="contenedor-tallas">
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-2', 'S', this)">S</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-2', 'M', this)">M</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-2', 'L', this)">L</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-2', 'XL', this)">XL</span>
+                        </span>
+                    </p>
+                    <p class="estado-seleccion" id="estado-prod-2">Selección: Ninguna</p>
+                    <button type="button" class="btn-solicitar" onclick="enviarAFormulario('prod-2', 'Legging Sin Costura Lateral', '₡21.900')">Solicitar en Formulario &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="imagen-box" id="prod-3" style="margin-top: 25px; padding-bottom: 20px;">
+                <img src="legging3.jpeg" alt="Legging con Bolsillo Aura Fit" style="width: 260px; height: 180px; object-fit: cover;">
+                <h3 style="margin: 10px 0 2px 0; color: #1e293b; font-size: 18px;">Legging con Bolsillo</h3>
+                <p class="precio-producto">₡24.500 <span style="font-size: 11px; font-weight: normal; color: #64748b;">(I.V.A. incluido)</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> Espacio práctico para guardar llave o celular en caminatas y trotes.</p>
+                
+                <div class="opciones-producto">
+                    <p style="margin: 5px 0;">
+                        <b>Color:</b> 
+                        <span class="contenedor-colores">
+                            <span class="circulo-color color-negro" title="Negro" onclick="seleccionarColor('prod-3', 'Negro', this)"></span>
+                            <span class="circulo-color color-azul" title="Azul Marino" onclick="seleccionarColor('prod-3', 'Azul Marino', this)"></span>
+                            <span class="circulo-color color-vino" title="Vino Tinto" onclick="seleccionarColor('prod-3', 'Vino Tinto', this)"></span>
+                        </span>
+                    </p>
+                    <p style="margin: 5px 0;">
+                        <b>Talla:</b> 
+                        <span class="contenedor-tallas">
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-3', 'S', this)">S</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-3', 'M', this)">M</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-3', 'L', this)">L</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('prod-3', 'XL', this)">XL</span>
+                        </span>
+                    </p>
+                    <p class="estado-seleccion" id="estado-prod-3">Selección: Ninguna</p>
+                    <button type="button" class="btn-solicitar" onclick="enviarAFormulario('prod-3', 'Legging con Bolsillo', '₡24.500')">Solicitar en Formulario &rarr;</button>
+                </div>
+            </div>
+
+            <p style="margin-top: 25px;"><a href="colecciones.html" style="color: #0284c7; text-decoration: none; font-weight: bold;">&larr; Volver a Colecciones</a></p>
+        </div>
+
+        <div class="menu-lateral-der" style="width: 20%; float: right; padding-left: 15px; border-left: 1px solid #e2e8f0;">
+            <b>Subcategorías</b>
+            <ul style="list-style-type: none; padding: 0; margin-top: 10px;">
+                <li style="margin-bottom: 8px;"><a href="leggings.html" style="text-decoration: none; color: #0284c7; font-weight: bold; font-size: 13px;">Leggings</a></li>
+                <li style="margin-bottom: 8px;"><a href="tops.html" style="text-decoration: none; color: #475569; font-size: 13px;">Tops y Blusas</a></li>
+                <li style="margin-bottom: 8px;"><a href="sueteres.html" style="text-decoration: none; color: #475569; font-size: 13px;">Suéteres y Jackets</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        var selecciones = {};
+
+        function seleccionarColor(idProd, color, elemento) {
+            if (!selecciones[idProd]) selecciones[idProd] = {};
+            selecciones[idProd].color = color;
+
+            var contenedor = document.getElementById(idProd);
+            var circulos = contenedor.getElementsByClassName('circulo-color');
+            for (var i = 0; i < circulos.length; i++) {
+                circulos[i].classList.remove('activo');
+            }
+            elemento.classList.add('activo');
+            actualizarTexto(idProd);
+        }
+
+        function seleccionarTalla(idProd, talla, elemento) {
+            if (!selecciones[idProd]) selecciones[idProd] = {};
+            selecciones[idProd].talla = talla;
+
+            var contenedor = document.getElementById(idProd);
+            var tallas = contenedor.getElementsByClassName('cuadro-talla');
+            for (var i = 0; i < tallas.length; i++) {
+                tallas[i].classList.remove('activo');
+            }
+            elemento.classList.add('activo');
+            actualizarTexto(idProd);
+        }
+
+        function actualizarTexto(idProd) {
+            var sel = selecciones[idProd];
+            var colorTxt = sel.color ? sel.color : "Sin elegir";
+            var tallaTxt = sel.talla ? sel.talla : "Sin elegir";
+            document.getElementById('estado-' + idProd).innerHTML = "Selección: Color " + colorTxt + " | Talla " + tallaTxt;
+        }
+
+        function enviarAFormulario(idProd, nombreProducto, precio) {
+            var sel = selecciones[idProd];
+            if (!sel || !sel.color || !sel.talla) {
+                alert("Por favor selecciona un color y una talla antes de solicitar la prenda.");
+                return;
+            }
+            var url = "contacto.html?producto=" + encodeURIComponent(nombreProducto) +
+                      "&color=" + encodeURIComponent(sel.color) +
+                      "&talla=" + encodeURIComponent(sel.talla) +
+                      "&precio=" + encodeURIComponent(precio);
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>

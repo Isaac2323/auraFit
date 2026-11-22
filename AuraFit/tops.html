@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tops y Blusas - Aura Fit</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .precio-producto {
+            font-size: 17px;
+            font-weight: bold;
+            color: #0284c7;
+            margin: 4px 0 8px 0;
+        }
+        .opciones-producto {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #475569;
+        }
+        .contenedor-colores {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .circulo-color {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            margin-right: 6px;
+            border: 2px solid #cbd5e1;
+            vertical-align: middle;
+            cursor: pointer;
+            transition: transform 0.15s, border-color 0.15s;
+        }
+        .circulo-color:hover {
+            transform: scale(1.15);
+        }
+        .circulo-color.activo {
+            border: 2px solid #0284c7;
+            box-shadow: 0 0 0 2px #bae6fd;
+            transform: scale(1.15);
+        }
+        .color-negro { background-color: #1e293b; }
+        .color-blanco { background-color: #f8fafc; }
+        .color-celeste { background-color: #0284c7; }
+
+        .contenedor-tallas {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .cuadro-talla {
+            display: inline-block;
+            border: 1px solid #cbd5e1;
+            padding: 3px 8px;
+            font-size: 11px;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-right: 4px;
+            background-color: #f8fafc;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .cuadro-talla:hover {
+            border-color: #0284c7;
+        }
+        .cuadro-talla.activo {
+            background-color: #0284c7;
+            color: #ffffff;
+            border-color: #0284c7;
+        }
+        .estado-seleccion {
+            font-size: 12px;
+            color: #0f172a;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+        .btn-solicitar {
+            margin-top: 8px;
+            background-color: #1e293b;
+            color: #ffffff;
+            border: none;
+            padding: 7px 14px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-solicitar:hover {
+            background-color: #0284c7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content-container">
+
+        <div class="centro-contenido" style="width: 75%; float: left;">
+            <h2>Colección: Tops y Blusas</h2>
+            <p>Tops de soporte medio y blusas deportivas ultraligeras ideales para entrenamiento funcional, cardio y clima cálido en Costa Rica. <b>Selecciona color y talla para solicitar tu prenda:</b></p>
+
+            <!-- Producto 1 -->
+            <div class="imagen-box" id="top-1" style="margin-top: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px;">
+                <img src="top1.jpeg" alt="Top Deportivo Soporte Alto Aura Fit" style="width: 260px; height: 180px; object-fit: cover;">
+                <h3 style="margin: 10px 0 2px 0; color: #1e293b; font-size: 18px;">Top Deportivo Espalda Cruzada</h3>
+                <p class="precio-producto">₡14.900 <span style="font-size: 11px; font-weight: normal; color: #64748b;">(I.V.A. incluido)</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> Soporte firme con tirantes cruzados en espalda y almohadillas removibles de secado rápido.</p>
+                
+                <div class="opciones-producto">
+                    <p style="margin: 5px 0;">
+                        <b>Color:</b> 
+                        <span class="contenedor-colores">
+                            <span class="circulo-color color-negro" title="Negro" onclick="seleccionarColor('top-1', 'Negro', this)"></span>
+                            <span class="circulo-color color-blanco" title="Blanco" onclick="seleccionarColor('top-1', 'Blanco', this)"></span>
+                            <span class="circulo-color color-celeste" title="Azul Celeste" onclick="seleccionarColor('top-1', 'Azul Celeste', this)"></span>
+                        </span>
+                    </p>
+                    <p style="margin: 5px 0;">
+                        <b>Talla:</b> 
+                        <span class="contenedor-tallas">
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-1', 'S', this)">S</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-1', 'M', this)">M</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-1', 'L', this)">L</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-1', 'XL', this)">XL</span>
+                        </span>
+                    </p>
+                    <p class="estado-seleccion" id="estado-top-1">Selección: Ninguna</p>
+                    <button type="button" class="btn-solicitar" onclick="enviarAFormulario('top-1', 'Top Deportivo Espalda Cruzada', '₡14.900')">Solicitar en Formulario &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Producto 2 -->
+            <div class="imagen-box" id="top-2" style="margin-top: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px;">
+                <img src="top2.jpeg" alt="Blusa Dry-Fit Manga Corta Aura Fit" style="width: 260px; height: 180px; object-fit: cover;">
+                <h3 style="margin: 10px 0 2px 0; color: #1e293b; font-size: 18px;">Blusa Dry-Fit Ultraligera</h3>
+                <p class="precio-producto">₡13.500 <span style="font-size: 11px; font-weight: normal; color: #64748b;">(I.V.A. incluido)</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> Tejido microperforado en espalda para máxima ventilación en rutinas de alta intensidad.</p>
+                
+                <div class="opciones-producto">
+                    <p style="margin: 5px 0;">
+                        <b>Color:</b> 
+                        <span class="contenedor-colores">
+                            <span class="circulo-color color-negro" title="Negro" onclick="seleccionarColor('top-2', 'Negro', this)"></span>
+                            <span class="circulo-color color-blanco" title="Blanco" onclick="seleccionarColor('top-2', 'Blanco', this)"></span>
+                            <span class="circulo-color color-celeste" title="Azul Celeste" onclick="seleccionarColor('top-2', 'Azul Celeste', this)"></span>
+                        </span>
+                    </p>
+                    <p style="margin: 5px 0;">
+                        <b>Talla:</b> 
+                        <span class="contenedor-tallas">
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-2', 'S', this)">S</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-2', 'M', this)">M</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-2', 'L', this)">L</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-2', 'XL', this)">XL</span>
+                        </span>
+                    </p>
+                    <p class="estado-seleccion" id="estado-top-2">Selección: Ninguna</p>
+                    <button type="button" class="btn-solicitar" onclick="enviarAFormulario('top-2', 'Blusa Dry-Fit Ultraligera', '₡13.500')">Solicitar en Formulario &rarr;</button>
+                </div>
+            </div>
+
+            <!-- Producto 3 -->
+            <div class="imagen-box" id="top-3" style="margin-top: 25px; padding-bottom: 20px;">
+                <img src="top3.jpeg" alt="Crop Top Manga Larga Seamless Aura Fit" style="width: 260px; height: 180px; object-fit: cover;">
+                <h3 style="margin: 10px 0 2px 0; color: #1e293b; font-size: 18px;">Crop Top Seamless Manga Larga</h3>
+                <p class="precio-producto">₡16.800 <span style="font-size: 11px; font-weight: normal; color: #64748b;">(I.V.A. incluido)</span></p>
+                <p style="margin: 0 0 10px 0;"><b>Descripción:</b> Diseño sin costuras con abertura para pulgares y protección solar UV para entrenar al aire libre.</p>
+                
+                <div class="opciones-producto">
+                    <p style="margin: 5px 0;">
+                        <b>Color:</b> 
+                        <span class="contenedor-colores">
+                            <span class="circulo-color color-negro" title="Negro" onclick="seleccionarColor('top-3', 'Negro', this)"></span>
+                            <span class="circulo-color color-blanco" title="Blanco" onclick="seleccionarColor('top-3', 'Blanco', this)"></span>
+                            <span class="circulo-color color-celeste" title="Azul Celeste" onclick="seleccionarColor('top-3', 'Azul Celeste', this)"></span>
+                        </span>
+                    </p>
+                    <p style="margin: 5px 0;">
+                        <b>Talla:</b> 
+                        <span class="contenedor-tallas">
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-3', 'S', this)">S</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-3', 'M', this)">M</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-3', 'L', this)">L</span>
+                            <span class="cuadro-talla" onclick="seleccionarTalla('top-3', 'XL', this)">XL</span>
+                        </span>
+                    </p>
+                    <p class="estado-seleccion" id="estado-top-3">Selección: Ninguna</p>
+                    <button type="button" class="btn-solicitar" onclick="enviarAFormulario('top-3', 'Crop Top Seamless Manga Larga', '₡16.800')">Solicitar en Formulario &rarr;</button>
+                </div>
+            </div>
+
+            <p style="margin-top: 25px;"><a href="colecciones.html" style="color: #0284c7; text-decoration: none; font-weight: bold;">&larr; Volver a Colecciones</a></p>
+        </div>
+
+        <div class="menu-lateral-der" style="width: 20%; float: right; padding-left: 15px; border-left: 1px solid #e2e8f0;">
+            <b>Subcategorías</b>
+            <ul style="list-style-type: none; padding: 0; margin-top: 10px;">
+                <li style="margin-bottom: 8px;"><a href="leggings.html" style="text-decoration: none; color: #475569; font-size: 13px;">Leggings</a></li>
+                <li style="margin-bottom: 8px;"><a href="tops.html" style="text-decoration: none; color: #0284c7; font-weight: bold; font-size: 13px;">Tops y Blusas</a></li>
+                <li style="margin-bottom: 8px;"><a href="sueteres.html" style="text-decoration: none; color: #475569; font-size: 13px;">Suéteres y Jackets</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        var selecciones = {};
+
+        function seleccionarColor(idProd, color, elemento) {
+            if (!selecciones[idProd]) selecciones[idProd] = {};
+            selecciones[idProd].color = color;
+
+            var contenedor = document.getElementById(idProd);
+            var circulos = contenedor.getElementsByClassName('circulo-color');
+            for (var i = 0; i < circulos.length; i++) {
+                circulos[i].classList.remove('activo');
+            }
+            elemento.classList.add('activo');
+            actualizarTexto(idProd);
+        }
+
+        function seleccionarTalla(idProd, talla, elemento) {
+            if (!selecciones[idProd]) selecciones[idProd] = {};
+            selecciones[idProd].talla = talla;
+
+            var contenedor = document.getElementById(idProd);
+            var tallas = contenedor.getElementsByClassName('cuadro-talla');
+            for (var i = 0; i < tallas.length; i++) {
+                tallas[i].classList.remove('activo');
+            }
+            elemento.classList.add('activo');
+            actualizarTexto(idProd);
+        }
+
+        function actualizarTexto(idProd) {
+            var sel = selecciones[idProd];
+            var colorTxt = sel.color ? sel.color : "Sin elegir";
+            var tallaTxt = sel.talla ? sel.talla : "Sin elegir";
+            document.getElementById('estado-' + idProd).innerHTML = "Selección: Color " + colorTxt + " | Talla " + tallaTxt;
+        }
+
+        function enviarAFormulario(idProd, nombreProducto, precio) {
+            var sel = selecciones[idProd];
+            if (!sel || !sel.color || !sel.talla) {
+                alert("Por favor selecciona un color y una talla antes de solicitar la prenda.");
+                return;
+            }
+            var url = "contacto.html?producto=" + encodeURIComponent(nombreProducto) +
+                      "&color=" + encodeURIComponent(sel.color) +
+                      "&talla=" + encodeURIComponent(sel.talla) +
+                      "&precio=" + encodeURIComponent(precio);
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>
